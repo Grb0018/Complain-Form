@@ -189,12 +189,12 @@ user-select: none;}
             const form = document.forms['google-sheet']
           
             form.addEventListener('submit', e => {
-                if(document.getElementById('Mobile Number').value!=''||document.getElementById('Agent Name').value!=''||document.getElementById('Centers').value!='---'){
+                if(document.getElementById('Mobile Number').value!=''& document.getElementById('Agent Name').value!=''& document.getElementById('Centers').value!='---'){
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Submitted"))
                 .then(alert("Submitted"))
-                .catch(error => alert('Error!', error.message))
+                .catch(error => console.log('Error!', error.message))
                 }
                 else{
                     alert('Give Agent Name and Mobile Number Properly')
