@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tag1{
+            padding: 10px;
+    opacity: 0.7;
+    font-family: sans-serif;
+    font-size: 32px;
+    position: absolute;
+    top: 22px;
+    user-select: none;
+        }
+        input[type="submit"] {    background: #858585;
+    font-size: 13px;
+    font-family: system-ui;
+    color: whitesmoke;
+    box-shadow: -3px 4px 5px #0603034d;}
+        #tag{    padding: 10px;
+    opacity: 0.7;
+    font-family: sans-serif;
+    font-size: 12px;
+    position: absolute;
+    bottom: -8px;
+user-select: none;}
+        body select{     padding: 3px 10px;
+    border-radius: 14px;
+    width: max-content;
+    margin-top: 20px;}
+    body select option{  padding: 3px 10px;
+    border-radius: 14px;}
+    .no{display:none}
+    body{    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ff7f50ba;}
+    body input{
+        width: 300px;
+    padding-left: 15px;
+    height: 29px;
+    border-radius: 20px;
+    margin-top:25px;
+    border:1px solid lightgray;
+    }
+    body textarea{    width: 300px;
+    border-radius: 25px;
+    margin-top: 25px;
+    padding-left: 25px;}
+    body form{    width: 408px;
+    height: max-content;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-content: stretch;
+    padding: 30px;
+    background: #dddcdc;
+    top: 145px;
+    position: absolute;
+    border-radius: 25px;}
+    </style>
+</head>
+<body>
+    <form method="post" autocomplete="off" name="google-sheet">
+    <select  name="Complain Against Department" id="Main">
+        <option value="No Issue">--</option>
+        <option value="Home Collection">Home Collection</option>
+        <option value="Center">Center</option>
+        <option value="Lab">Lab</option>
+        <option value="CRM">CRM</option>
+        <option value="SMS Link">Sms Link</option>
+        <option value="Website Related">Website Related</option>
+        <option value="Demographic">Demographic</option>
+    </select>
+    <select class='no' name="Home Collection Issue" id="Home Collection">
+        <option value="No Issue">--</option>
+        <option value="Delay">Delay</option>
+        <option value="No Respond on Call">No Respond on Call</option>
+        <option value="Behavioral">Behavioral</option>
+        <option value="Charges">Charges</option>
+        <option value="Poor Technique">Poor Technique</option>
+        <option value="Denied">Denied</option>
+    </select>
+<select class='no' name="Center Issue" id="Center">
+    <option value="No Issue">--</option>
+<option value="Behavioral">Behavioral</option>
+<option value="Denied">Denied</option>
+<option value="Poor Technique">Poor Technique</option>
+<option value="Billing">Billing</option>
+<option value="Wait Time">Wait Time</option>
+<option value="Infrastructure">Infrastructure</option>
+<option value="No Respond on Call">No Respond on Call</option>
+<option value="Wrong Information">Wrong Information</option>
+</select>
+
+<select class='no' name="Lab Issue" id="Lab">
+    <option value="No Issue">--</option>
+    <option value="Report Delay">Report Delay</option>
+    <option value="Wrong Report">Wrong Report</option>
+</select>
+        
+<select class='no' name="CRM Issue" id="CRM">
+    <option value="No Issue">--</option>
+    <option value="Behavioral">Behavioral</option>
+    <option value="No Respond on Call">No Respond on Call</option>
+    <option value="Denied">Denied</option>
+    <option value="Commitment Not Fulfilled">Commitment Not Fulfilled</option>
+    <option value="Wrong Information">Wrong Information</option>
+</select>
+<select class='no' name="SMS Link Issue" id="SMS Link">
+    <option value="No Issue">--</option>
+    <option value="Report/Bill SMS">Report/Bill SMS</option>
+    <option value="Booking SMS">Booking Sms</option>
+</select>
+<select class='no' name="Website Related Issue" id="Website Related">
+    <option value="No Issue">--</option>
+    <option value="Booking Done,Not reflecting">Booking Done,Not reflecting</option>
+    <option value="Charges">Charges</option>
+    <option value="Wrong Information">Wrong Information</option>
+</select>
+<select class='no' name="Demographic Issue" id="Demographic">
+    <option value="No Issue">--</option>
+    <option value="Wrong Details">Wrong Details</option>
+</select>
+<select name="Centers" id="Centers">
+    <option value="---">---</option>
+    <option value="KHA">KHA</option>
+    <option value="KES">KES</option>
+    <option value="CHP">CHP</option>
+    <option value="BAR">BAR</option>
+    <option value="PHL">PHL</option>
+    <option value="DUN">DUN</option>
+    <option value="MRD">MRD</option>
+    <option value="KNK">KNK</option>
+    <option value="JAD">JAD</option>
+    <option value="SLK">SLK</option>
+    <option value="BKP">BKP</option>
+    <option value="BHT">BHT</option>
+    <option value="MDG">MDG</option>
+    <option value="SL2">SL2</option>
+    <option value="BIR">BIR</option>
+    <option value="GAR">GAR</option>
+    <option value="TLG">TLG</option>
+    <option value="SRE">SRE</option>
+    <option value="KLP">KLP</option>
+    <option value="SOD">SOD</option>
+    <option value="LAK">LAK</option>
+    <option value="SNT">SNT</option>
+    <option value="HAB">HAB</option>
+    <option value="ELG">ELG</option>
+    <option value="BAN">BAN</option>
+    <option value="NBP">NBP</option>
+    <option value="BAS">BAS</option>
+    <option value="BEH">BEH</option>
+    <option value="DIH">DIH</option>
+    <option value="HWH">HWH</option>
+    <option value="TAM">TAM</option>
+    <option value="JDP">JDP</option>
+    <option value="ASN">ASN</option>
+    <option value="KND">KND</option>
+    <option value="JAL">JAL</option>
+    <option value="SIL">SIL</option>
+    <option value="DGP">DGP</option>
+    <option value="RAJ">RAJ</option>
+
+</select>
+<input type="text" name="Agent Name" placeholder="Agent Name" id="Agent Name">
+<input type="number" name="Mobile Number" placeholder='Mobile Number' id="Mobile Number">
+<textarea name="Remarks" id="Remarks" cols="30" rows="3"></textarea>
+<input type="submit" value="submit">
+</form>
+<p id="tag1">Complain Tracker Form</p>
+<p id="tag">Created By Gourab</p>
+<script>
+    document.getElementById('Main').addEventListener('change',()=>{
+       var a= document.body.querySelectorAll('select');
+       a.forEach(element => {
+        element.style.display='none'
+       });
+        document.getElementById(document.getElementById('Main').value).style.display='block';
+        document.getElementById('Main').style.display='block';
+        document.getElementById('Centers').style.display='block'
+    })
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx8GkwsGZBGpd6tgjYwFr5hU5-jnwHEVd0MGhbqw--UW_B9FFhMrUMmkr6_ugeR-6T5fg/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+                if(document.getElementById('Mobile Number').value!=''||document.getElementById('Agent Name').value!=''||document.getElementById('Centers').value!='---'){
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Submitted"))
+                .then(alert("Submitted"))
+                .catch(error => alert('Error!', error.message))
+                }
+                else{
+                    alert('Give Agent Name and Mobile Number Properly')
+                }
+
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>
