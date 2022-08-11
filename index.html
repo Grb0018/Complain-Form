@@ -66,6 +66,7 @@ user-select: none;}
 </head>
 <body>
     <form method="post" autocomplete="off" name="google-sheet">
+    <input type="text" name="Agent Name" placeholder="Agent Name" id="Agent Name">   
     <select  name="Complain Against Department" id="Main">
         <option value="No Issue">--</option>
         <option value="Home Collection">Home Collection</option>
@@ -170,15 +171,18 @@ user-select: none;}
 
 </select>
         <br><br>
-        <text style='position:relative;left:-20px;font-size:13px;'> Resolution : </text>
+        <text style='position: relative;
+    left: -61px;
+    font-size: 13px;
+    top: 12px;'> Resolution : </text>
   <select name="Resolution" id="Resolution">
       <option value="---">---</option>
       <option value="Escalated To Department">Escalated To Department</option>
     <option value="Resolved on Call">Resolved on Call</option>
     <option value="Call Back Committed">Call Back Committed</option>
   </select>    
-<input type="text" name="Agent Name" placeholder="Agent Name" id="Agent Name">
-<input type="number" name="Mobile Number" placeholder='Mobile Number' id="Mobile Number">
+
+<input type="number" name="Mobile Number" placeholder='Patient Mobile Number' id="Mobile Number">
 <textarea name="Remarks" id="Remarks" cols="30" rows="3"></textarea>
 <input type="submit" value="submit">
 </form>
@@ -190,15 +194,18 @@ user-select: none;}
        a.forEach(element => {
         element.style.display='none'
        });
+        if(document.getElementById('Main').value ==='Home Collection' || document.getElementById('Main').value ==='Center'){
+            document.getElementById('Centers').style.display='block';
+        }
         document.getElementById(document.getElementById('Main').value).style.display='block';
         document.getElementById('Main').style.display='block';
-        document.getElementById('Centers').style.display='block'
+        
     })
             const scriptURL = 'https://script.google.com/macros/s/AKfycbx8GkwsGZBGpd6tgjYwFr5hU5-jnwHEVd0MGhbqw--UW_B9FFhMrUMmkr6_ugeR-6T5fg/exec'
             const form = document.forms['google-sheet']
           
             form.addEventListener('submit', e => {
-                if(document.getElementById('Mobile Number').value!=''& document.getElementById('Agent Name').value!=''& document.getElementById('Centers').value!='---'){
+                if(document.getElementById('Mobile Number').value!=''& document.getElementById('Agent Name').value!=''){
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Submitted"))
