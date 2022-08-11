@@ -211,13 +211,9 @@ user-select: none;}
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Submitted"))
+                .then(alert("Submitted"))
                 .then(location.reload())
-                    .then(setTimeout(()=>{
-              var a= document.body.querySelectorAll('select');
-       a.forEach(element => {
-        element.value='';
-       });
-              },1000))
+                    
                 .catch(error => console.log('Error!', error.message))
                 }
                 else{
